@@ -4,7 +4,6 @@ import {Button, Container, Grid} from 'semantic-ui-react';
 import Header from './Header';
 import BodyText from './BodyText';
 
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -68,13 +67,9 @@ class App extends Component {
                     <Grid.Column></Grid.Column>
                     <Grid.Column>
 
-                        <BodyText
-
-                            selectedText={this.state.selectedText}
-
-                        />
-
-                        <Button color="violet" content='Click for examples'/>
+                        <Container>"All changes, even positive ones, are scary. Attempts to reach goals through radical or
+                            revolutionary means often fail because they heighten fear. But the small steps of kaizen disarm the
+                            brain’s fear response, stimulating rational thought and creative play." -Robert Maurer</Container>
                     </Grid.Column>
                     <Grid.Column></Grid.Column>
 
