@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
-import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {Sidebar, Segment, Button, Menu, Image, Icon, Header} from 'semantic-ui-react';
 
 class SidebarLeftOverlay extends Component {
-    state = { visible: false }
+    state = {visible: false}
 
-    toggleVisibility = () => this.setState({ visible: !this.state.visible })
+    toggleVisibility = () => this.setState({visible: !this.state.visible})
 
     render() {
-        const { visible } = this.state
+        const {visible} = this.state
         return (
             <div>
-                <Button onClick={this.toggleVisibility}>Toggle Visibility</Button>
+                <Button onClick={this.toggleVisibility}>Menu</Button>
                 <Sidebar.Pushable as={Segment}>
                     <Sidebar
                         as={Menu}
@@ -21,23 +22,17 @@ class SidebarLeftOverlay extends Component {
                         vertical
                         inverted
                     >
-                        <Menu.Item name='home'>
-                            <Icon name='home' />
-                            Home
-                        </Menu.Item>
-                        <Menu.Item name='gamepad'>
-                            <Icon name='gamepad' />
-                            Games
-                        </Menu.Item>
-                        <Menu.Item name='camera'>
-                            <Icon name='camera' />
-                            Channels
-                        </Menu.Item>
+                        <Menu.Item as={Link} to="/">Kaizen</Menu.Item>
+                        <Menu.Item as={Link} to="/small-actions">Take Small Actions</Menu.Item>
+                        <Menu.Item as={Link} to="/small-moments">Identify Small Moments</Menu.Item>
+                        <Menu.Item as={Link} to="/small-problems">Solve Small Problems</Menu.Item>
+                        <Menu.Item as={Link} to="/small-questions">Ask Small Questions</Menu.Item>
+                        <Menu.Item as={Link} to="/small-rewards">Bestow Small Rewards</Menu.Item>
                     </Sidebar>
                     <Sidebar.Pusher>
                         <Segment basic>
                             <Header as='h3'>Application Content</Header>
-                            <Image src='/assets/images/wireframe/paragraph.png' />
+                            <Image src='https://www.catster.com/wp-content/uploads/2017/12/A-gray-kitten-meowing.jpg'/>
                         </Segment>
                     </Sidebar.Pusher>
                 </Sidebar.Pushable>
@@ -46,4 +41,4 @@ class SidebarLeftOverlay extends Component {
     }
 }
 
-export default SidebarLeftOverlay
+export default SidebarLeftOverlay;

@@ -7,6 +7,7 @@ import SmallQuestions from "../components/SmallQuestions"
 import SmallRewards from "../components/SmallRewards"
 import SmallThoughts from "../components/SmallThoughts"
 import NotFoundPage from "../components/NotFoundPage"
+import Sidebar from "../components/Sidebar";
 
 
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
@@ -16,6 +17,7 @@ const AppRouter = () => (
 
     <BrowserRouter>
         <div>
+            <Sidebar/>
             <Switch>
                 <Route path="/" component={App} exact={true}/>
                 <Route path="/small-actions" component={SmallActions}/>
